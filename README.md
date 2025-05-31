@@ -1,4 +1,7 @@
 # EmbeddedLinuxBBB ;
+
+------------------------------------------------------------------------------
+
 Step 1:
 cp PROJECT-BBB/pre-built-images/* /Workspace-BBB/BOOT.
 Step 2:
@@ -19,3 +22,4 @@ Step 7:
 cd /Workspace-BBB/BOOT; 
 sudo cp uEnv.txt /media/ranganadh/BOOT/uEnv.txt
 
+------------------------------------------------------------------------------
