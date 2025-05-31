@@ -11,6 +11,8 @@ sudo cp BBB_MLO /media/ranganadh/BOOT/MLO
 Step 5:
 sudo cp u-boot.img /media/ranganadh/BOOT/u-boot.img
 Step 6:
-sudo cp uImage /media/ranganadh/ROOTFS/uImage
+sudo cp ROOTFS/* /media/ranganadh/ROOTFS/
+sudo cp uImage /media/ranganadh/ROOTFS/boot/uImage
+sudo cp am335x-boneblack.dtb /media/ranganadh/ROOTFS/boot/am335x-boneblack.dtb
 Step 7:
 sudo cp uEnv.txt /media/ranganadh/BOOT/uEnv.txt
