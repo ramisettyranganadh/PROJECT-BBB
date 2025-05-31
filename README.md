@@ -11,3 +11,5 @@ Step 5: (rename as u-boot.img and copy to SD Card BOOT)
 sudo cp u-boot.img /media/ranganadh/BOOT/u-boot.img
 Step 6: (rename as uImage and copy to SD Card BOOT)
 sudo cp uImage /media/ranganadh/BOOT/uImage
+Step 7: (rename as uEnv.txt and copy to SD Card BOOT)
+sudo cp uEnv.txt /media/ranganadh/BOOT/uEnv.txt
