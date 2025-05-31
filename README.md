@@ -1,15 +1,16 @@
 # EmbeddedLinuxBBB ;
-Step 1: (Secondary Program Loader or Memory/MMC LOader)
-copy images from PROJECT-BBB/pre-built-images/ and paste in Local Workspace.
-Step 2: (UART)
-Run minicom -b 115200 -o -D /dev/ttyACM0 and Power Up the Beagle Bone Black.
-Step 3: (SD Card)
-Partition SD Card into BOOT fat16 with boot flag and ROOTFS ext3.
-Step 4: (rename as MLO and copy to SD Card BOOT)
-cd /Workspace-BBB/BOOT; sudo cp MLO /media/ranganadh/BOOT/MLO
-Step 5: (rename as u-boot.img and copy to SD Card BOOT)
+Step 1:
+cp PROJECT-BBB/pre-built-images/* /Workspace-BBB/BOOT.
+Step 2:
+minicom -b 115200 -o -D /dev/ttyACM0
+Step 3:
+Partition SD Card as BOOT fat16 with boot flag and ROOTFS ext3.
+Step 4:
+cd /Workspace-BBB/BOOT; 
+sudo cp BBB_MLO /media/ranganadh/BOOT/MLO
+Step 5:
 sudo cp u-boot.img /media/ranganadh/BOOT/u-boot.img
-Step 6: (rename as uImage and copy to SD Card ROOTFS)
+Step 6:
 sudo cp uImage /media/ranganadh/ROOTFS/uImage
-Step 7: (rename as uEnv.txt and copy to SD Card BOOT)
+Step 7:
 sudo cp uEnv.txt /media/ranganadh/BOOT/uEnv.txt
