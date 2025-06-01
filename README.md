@@ -53,9 +53,8 @@ export CROSS_COMPILE=arm-linux-gnueabihf-
 make distclean
 make am335x_evm_defconfig
 make DEVICE_TREE=am335x-boneblack
-make
-make menuconfig
 Step 6:
+make menuconfig
 make
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j10
 
