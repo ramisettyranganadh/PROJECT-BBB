@@ -27,9 +27,16 @@ sudo cp uEnv.txt /media/ranganadh/BOOT/uEnv.txt
 Step 1:
 https://docs.u-boot.org/en/latest/build/source.html
 Step 2:
-git clone https://github.com/u-boot/u-boot
+git clone https://github.com/u-boot/u-boot;
+git clone https://github.com/eewiki/u-boot-patches.git;
+cp u-boot-patches/v2019.04/0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch ../../u-boot/;
+cp u-boot-patches/v2019.04/0002-U-Boot-BeagleBone-Cape-Manager.patch ../../u-boot/;
+cd ../../u-boot;
+patch -p1 < 0001-am335x_evm-uEnv.txt-bootz-n-fixes.patch;
+patch -p1 < 0002-U-Boot-BeagleBone-Cape-Manager.patch;
 Step 3:
 sudo apt-get install gcc gcc-aarch64-linux-gnu
+sudo apt-get install gcc-arm*
 Step 4:
 sudo apt-get install bc bison build-essential coccinelle \
   device-tree-compiler dfu-util efitools flex gdisk graphviz imagemagick \
@@ -41,15 +48,15 @@ sudo apt-get install bc bison build-essential coccinelle \
   python3-sphinx-rtd-theme python3-subunit python3-testtools \
   python3-venv swig uuid-dev
 Step 5:
+export ARCH=arm 
+export CROSS_COMPILE=arm-linux-gnueabihf-
+make distclean
+make am335x_evm_defconfig
+make DEVICE_TREE=am335x-boneblack
+make
 make menuconfig
 Step 6:
 make
-
-sudo apt-get install gcc-arm*
-Step 2:
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- am335x-evm-defconfig
-Step 3:
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j10
-Step 4:
 
 ------------------------------------------------------------------------------
