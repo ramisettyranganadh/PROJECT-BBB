@@ -58,7 +58,13 @@ make menuconfig
 make
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j10
 
----------------------------Load Images from UART---------------------------
+----------------------Debug Probe Serial Communication------------------------
+
+    minicom -b 115200 -o -D /dev/ttyACM0
+    Press any Key within 3 Seconds to U-BOOT
+    printenv; env set ranganadh ramisetty; printenv ranganadh;
+    
+---------------------------Load Images from UART------------------------------
 
 https://github.com/niekiran/EmbeddedLinuxBBB/tree/master/pre-built-images/serial-boot
 
@@ -69,11 +75,5 @@ https://github.com/niekiran/EmbeddedLinuxBBB/tree/master/pre-built-images/serial
     Enter UBOOT -> loadx 0x88080000 -> Press Ctrl A + S then select initramfs
     Enter UBOOT -> setenv bootargs console=ttyO0,115200 root=/dev/ram0 rw initrd=0x88080000
     Enter UBOOT -> bootm 0x82000000 0x88080000 0x88000000
-
-----------------------Debug Probe Serial Communication---------------------
-
-    minicom -b 115200 -o -D /dev/ttyACM0
-    Press any Key within 3 Seconds to U-BOOT
-    printenv; env set ranganadh ramisetty; printenv ranganadh;
 
 ------------------------------------------------------------------------------
